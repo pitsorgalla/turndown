@@ -118,7 +118,7 @@ rules.fencedCodeBlock = {
         )
       ||
         (
-          node.className == 'code'
+          node.classList.contains('code')
         )
       )
     )
