@@ -114,7 +114,7 @@
 <body>
 <header>
   <h1>turndown</h1>
-  <a class="source-link" href="https://github.com/domchristie/turndown">Source on GitHub</a>
+  <a class="source-link" href="https://github.com/pitsorgalla/turndown">Source on GitHub</a>
 </header>
 <div class="row">
   <div class="col">
@@ -239,6 +239,12 @@ console.log(
     var output = document.getElementById('output')
     var optionsForm = document.getElementById('options')
     var turndownService = new window.TurndownService(options())
+    turndownService.addRule('customCode', {
+       filter: ['pre'],
+       replacement: function (content) {
+         return '```\n' + content + '\n```'
+       }
+     })
 
     input.addEventListener('input', update)
 
