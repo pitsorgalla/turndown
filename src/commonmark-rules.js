@@ -10,6 +10,13 @@ rules.paragraph = {
   }
 }
 
+rules.codeBlockNew = {
+  filter: 'pre class="code"',
+  replacement: function (content) {
+    return '```bash\n' + content + '\n```'
+  }
+}
+
 rules.lineBreak = {
   filter: 'br',
 
