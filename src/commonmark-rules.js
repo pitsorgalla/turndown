@@ -110,7 +110,8 @@ rules.fencedCodeBlock = {
   filter: function (node, options) {
     return (
       options.codeBlockStyle === 'indented' &&
-      node.nodeName === 'PRE' &&
+      node.nodeName === 'PRE' // &&
+      /*
       (
         (
           node.firstChild &&
@@ -121,6 +122,7 @@ rules.fencedCodeBlock = {
           node.classList.contains('code')
         )
       )
+      */
     )
   },
 
