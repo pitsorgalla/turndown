@@ -84,8 +84,16 @@ rules.indentedCodeBlock = {
     return (
       options.codeBlockStyle === 'indented' &&
       node.nodeName === 'PRE' &&
-      node.firstChild &&
-      node.firstChild.nodeName === 'CODE'
+      (
+        (
+          node.firstChild &&
+          node.firstChild.nodeName === 'CODE'
+        )
+      ||
+        (
+          node.className == 'code'
+        )
+      )
     )
   },
 
@@ -101,10 +109,18 @@ rules.indentedCodeBlock = {
 rules.fencedCodeBlock = {
   filter: function (node, options) {
     return (
-      options.codeBlockStyle === 'fenced' &&
+      options.codeBlockStyle === 'indented' &&
       node.nodeName === 'PRE' &&
-      node.firstChild &&
-      node.firstChild.nodeName === 'CODE'
+      (
+        (
+          node.firstChild &&
+          node.firstChild.nodeName === 'CODE'
+        )
+      ||
+        (
+          node.className == 'code'
+        )
+      )
     )
   },
 
