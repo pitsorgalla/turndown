@@ -242,7 +242,7 @@ console.log(
     turndownService.addRule('codeTestCustom', {
        filter: ['pre'],
        replacement: function (content) {
-         return '```bash\n' + content + '\n```'
+         return '\n```bash\n' + content + '\n```\n'
        }
      })
 
